@@ -1,0 +1,16 @@
+"""Areas to update"""
+
+from turtle import right
+from cv2 import threshold
+
+
+Make sure the ENA/B of the motor driver is connected to a in on the Pi / 18.
+On the Raspi code, enable 1KHz 50% duty-cylce 
+
+the threshold value :
+6 
+
+if sum of the angles os greater than 6, turn right else
+turn left (-6)
+
+Tensorflow is important for the navigation
