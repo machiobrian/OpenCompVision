@@ -1,13 +1,11 @@
-#classify animals based on number of teeth, length and weight
+# classify animals based on number of teeth, length and weight
 
 import numpy as np
 import cv2 as cv
 from random import randint, uniform #uniform imports pseudorandom floating point numbers
 
 animal_net = cv.ml.ANN_MLP_create()
-animal_net.setLayerSizes(np.array([3,
-50,
-4])) #input, hidden and output layers
+animal_net.setLayerSizes(np.array([3,50,4])) # input, hidden and output layers
 
 animal_net.setActivationFunction(cv.ml.ANN_MLP_SIGMOID_SYM, 0.6,1.0)
 animal_net.setTrainMethod(cv.ml.ANN_MLP_BACKPROP, 0.1, 0.1)

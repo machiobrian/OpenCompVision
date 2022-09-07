@@ -7,8 +7,8 @@ output_folder = './bm'
 if not os.path.exists(output_folder):
     os.mkdir(output_folder)
 
-faces_cascade = cv.CascadeClassifier('./haarcascade_frontalface_default.xml')
-eye_cascade = cv.CascadeClassifier('./haarcascade_eye.xml')
+faces_cascade = cv.CascadeClassifier('cascades/haarcascade_frontalface_default.xml')
+eye_cascade = cv.CascadeClassifier('cascades/haarcascade_eye.xml')
 
 camera = cv.VideoCapture(0)
 count = 0
