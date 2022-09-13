@@ -14,27 +14,27 @@ import cv2 as cv
 #construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-c", "--cascades", type=str, default="cascades", 
-                help="/home/machio_b/Documents/Python/OpenCV_4/cascades")
-                # --cascades point to the directory containing our pretrainde
+                help="path to input directory containing haar cascades")
+                # --cascades point to the directory containing our pre-trained
                 # face, eye, mouth
 args = vars(ap.parse_args())      
 
 #load each of these Haar cascades from disk
 #initialize a ditionary that maps the name of the haar cascades to their function
 
-detector_paths = {
-    "face" : "/home/machio_b/Documents/Python/OpenCV_4/cascades/haarcascade_frontalface_default.xml",
-    "eyes" : "/home/machio_b/Documents/Python/OpenCV_4/cascades/haarcascade_eye.xml",
-    "stop" : "/home/machio_b/Documents/Python/OpenCV_4/cascades/stop_cascade.xml"
+detectorPaths = {
+    "face" : "haarcascade_frontalface_default.xml",
+    "eyes" : "haarcascade_eye.xml",
+    "stop" : "stop_cascade.xml"
 } #defines a dictionary that maps, the name of the detector[key] to its corresponding
 #file path[value].
 
 #initialize a dictionary to store our haar cascade detctors
-detectors = {} #will have the same key as detector_path (face, eyes, stop) but the value will
-#be the Haar cascade once it's loaded from disk via cv.CascadeClassifier...
+detectors = {} #will have the same key as detector_path (face, eyes, stop) but the value
+# will be the Haar cascade once it's loaded from disk via cv.CascadeClassifier...
 
 #loop over our detector paths
-for (name, path) in detector_paths.items():
+for (name, path) in detectorPaths.items():
     #for each detector, build a full file path, load the haar cascade from disk,
     #  and store in the detectors dictionary
     path = os.path.sep.join([args["cascades"], path])
